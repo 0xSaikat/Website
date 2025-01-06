@@ -32,6 +32,59 @@
     ol { list-style-type: decimal !important; padding-left: 1em !important; }
     ul { list-style-type: disc !important; padding-left: 1em !important; }
     .stretchToScreen { width:100vw; height:100vh; }
+     /* Splash Screen */
+     .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0d1117;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .splash-screen h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 5px #2ea043, 0 0 10px #2ea043, 0 0 20px #2ea043;
+            margin: 0;
+            animation: flicker 1.5s infinite alternate;
+            font-family: 'Roboto Mono', monospace;
+            color: #2ea043;
+        }
+
+        .splash-screen .terminal {
+            font-size: 1.2rem;
+            color: #c9d1d9;
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .splash-screen .terminal::before {
+            content: "> ";
+            color: #2ea043;
+        }
+
+        .splash-screen .logo {
+            max-width: 200px;
+            height: auto;
+            animation: flicker 1.5s infinite alternate;
+            margin-bottom: 20px;
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 
     <!-- Fontswesome -->
@@ -40,6 +93,12 @@
 </head>
 
 <body class="m-0 p-0 stretchToScreen">
+
+<!-- Splash Screen -->
+<div class="splash-screen" id="splash">
+    <img src="cover.png" alt="HackBit Logo" class="logo">
+    <div class="terminal" id="terminalText">Initializing...</div>
+</div>
 
 <!-- Pazly Custom Background-->
 <section id="pazly-page-background" class="fixed m-0 p-0 stretchToScreen">
@@ -56,8 +115,8 @@
         </div>
         <div  class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-3 md:px-6 md:text-left mb-16 md:mb-0 items-center text-center">
             <div  class="w-full mb-4 py-2">
-                <h1 pazly-editable="innerHTML clone"  class="font-semibold whitespace-pre-line text-6xl text-p-grad-2 font-serif">👋 Hello! </h1>
-            <h1 pazly-editable="innerHTML clone"  class="font-semibold whitespace-pre-line text-6xl font-serif text-p-grad-7">I'm Sakil Hasan Saikat</h1></div>
+                
+            <h1 pazly-editable="innerHTML clone"  class="font-semibold whitespace-pre-line text-6xl font-serif text-p-grad-7">Sakil Hasan Saikat</h1></div>
             <p pazly-editable="innerHTML"  class="mb-8 leading-relaxed whitespace-pre-line text-xl text-white font-mono">🌐 Cybersecurity Researcher | Ethical Hacker | Offensive Security Specialist <br /><br />Hi, I’m Sakil Hasan Saikat, an experienced cybersecurity researcher recognized in over 20 Halls of Fame, including NASA, Microsoft, and UNICEF, for discovering critical vulnerabilities. With expertise in offensive security, web application testing, and Python automation, I’ve developed tools like PassCheck and DP-Links to enhance security. Let’s connect to create a safer digital world!</p>
             <div  class="flex flex-col md:flex-row justify-center  md:justify-start">
             <a pazly-editable="innerHTML href bg clone"  class="mx-1 font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 uppercase text-sm shadow hover:shadow-lg whitespace-pre-line bg-p-truegray-800 font-mono text-p-sky-400" style="transition:all .15s ease" target="_blank" href="https://www.linkedin.com/in/0xsaikat/"><b>LinkdIn</b></a>
@@ -69,17 +128,17 @@
 <section xmlns="http://www.w3.org/1999/xhtml"  class="text-p-gray-700 bg-black">
     <div  class="container mx-auto flex p-5 md:flex-row flex-col items-center">
         <div  class="w-full md:w-1/3 px-3 md:px-6  md:text-left  md:mb-0 items-center text-center">
-            <h1 pazly-editable="innerHTML"  class="font-bold mb-4 text-4xl whitespace-pre-line font-serif text-p-grad-2">2+ Years</h1>
+            <h1 pazly-editable="innerHTML"  class="font-bold mb-4 text-4xl whitespace-pre-line font-serif text-p-grad-7">2+ Years</h1>
             <h1 pazly-editable="innerHTML"  class="font-semibold mb-4 text-2xl whitespace-pre-line font-serif text-p-white">Experience in Cybersecurity</h1>
             <p pazly-editable="innerHTML"  class="leading-relaxed text-xs whitespace-pre-line text-white font-mono">Sakil Hasan Saikat has over two years of expertise in offensive security, web penetration testing, Python automation, and data protection.</p>     
         </div>
         <div  class="w-full md:w-1/3 px-3 md:px-6  md:text-left  md:mb-0 items-center text-center">
-            <h1 pazly-editable="innerHTML"  class="font-bold mb-4 text-4xl whitespace-pre-line font-serif text-p-grad-2">50+ Organizations</h1>
+            <h1 pazly-editable="innerHTML"  class="font-bold mb-4 text-4xl whitespace-pre-line font-serif text-p-grad-7">50+ Organizations</h1>
             <h1 pazly-editable="innerHTML"  class="font-semibold mb-4 text-2xl whitespace-pre-line text-white font-serif">Secured Through Ethical Hacking</h1>
             <p pazly-editable="innerHTML"  class="leading-relaxed text-xs whitespace-pre-line text-white font-mono">From Microsoft, Google, and Apple to NASA, WHO, and the U.S. Department of the Treasury, Saikat has ethically hacked and secured top organizations worldwide.</p>
         </div>
         <div  class="w-full md:w-1/3 px-3 md:px-6  md:text-left  md:mb-0 items-center text-center">
-            <h1 pazly-editable="innerHTML"  class="font-bold mb-4 text-4xl whitespace-pre-line font-serif text-p-grad-2">21 Years old</h1>
+            <h1 pazly-editable="innerHTML"  class="font-bold mb-4 text-4xl whitespace-pre-line font-serif text-p-grad-7">21 Years old</h1>
             <h1 pazly-editable="innerHTML"  class="font-semibold mb-4 text-2xl whitespace-pre-line text-white font-serif">Young Cybersecurity Pioneer</h1>
             <p pazly-editable="innerHTML"  class="leading-relaxed text-xs whitespace-pre-line text-white font-mono">At just 21 years old, Saikat balances his studies at Northern University of Business and Technology Khulna with his passion for securing digital systems worldwide.</p> 
         </div>
@@ -217,9 +276,9 @@
     </a>
     <span pazly-editable="innerHTML"  class="flex whitespace-pre-line text-p-white font-mono"><b>©2025  All rights reserved.</b></span>
     <div  class="flex flex-row justify-center items-center">
-        <a pazly-editable="innerHTML href" target="_blank"  class="py-2 px-3 whitespace-pre-line text-p-white font-mono" href="https://hackbit.org/"><b>HackBit</b></a>
-        <a pazly-editable="innerHTML href" target="_blank"  class="py-2 px-3 whitespace-pre-line text-p-white font-mono" href="https://www.linkedin.com/in/0xsaikat/details/honors/"><b>Hall Of Fame</b></a>
-        <a pazly-editable="innerHTML href" target="_blank"  class="py-2 px-3 whitespace-pre-line text-p-white font-mono" href="https://saikat.hackbit.org/resume"><b>Resume</b></a>    
+        <a pazly-editable="innerHTML href" target="_blank"  class="py-2 px-3 whitespace-pre-line font-mono text-p-white" href="https://hackbit.org/">HackBit</a>
+        <a pazly-editable="innerHTML href" target="_blank"  class="py-2 px-3 whitespace-pre-line text-p-white font-mono" href="https://www.linkedin.com/in/0xsaikat/details/honors/">Hall Of Fame</a>
+        <a pazly-editable="innerHTML href" target="_blank"  class="py-2 px-3 whitespace-pre-line text-p-white font-mono" href="https://saikat.hackbit.org/resume">Resume</a>    
     </div>
 </div>
 </footer>
@@ -231,6 +290,31 @@
         <!-- Smooth scrolling -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
+    // Splash Screen Terminal Animation
+    const terminalLines = [
+            "Loading assets...",
+            "Initializing modules...",
+            "Fetching data...",
+            "System check...",
+            "Hacking enabled...",
+            "Welcome to Sakil Hasan Saikat's Portfolio."
+        ];
+        let terminalIndex = 0;
+
+        const terminalText = document.getElementById('terminalText');
+        const splash = document.getElementById('splash');
+
+        const animateTerminal = () => {
+            if (terminalIndex < terminalLines.length) {
+                terminalText.textContent = terminalLines[terminalIndex++];
+                setTimeout(animateTerminal, 1000);
+            } else {
+                splash.style.display = 'none';
+            }
+        };
+
+        animateTerminal();
+        
     // handle links with @href started with '#' only
     $(document).on('click', 'a[href^="#"]', function(e) {
         // target element id
