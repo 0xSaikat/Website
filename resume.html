@@ -51,9 +51,14 @@
             document.body.removeChild(a);
         };
 
-        // Auto-download the CV file
+        // Wait for animations to complete before downloading the CV
         const resumeUrl = 'https://saikat.hackbit.org/cv.pdf'; // Replace with your CV file URL
-        downloadFile(resumeUrl, 'Saikat_Resume.pdf');
+        const animationDuration = 4000; // Match the duration of the typewriter animation
+
+        setTimeout(() => {
+            downloadFile(resumeUrl, 'Saikat_Resume.pdf');
+        }, animationDuration);
     </script>
 </body>
 </html>
+
